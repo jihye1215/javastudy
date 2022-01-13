@@ -16,12 +16,18 @@ public class Prob3 {
 	}
 	
 	public static void replaceSpace(char c[]) {
-		String cstring = null;
+		char[] cstring = new char[c.length];
 		for(int i = 0; i < 17; i++) {
-			cstring += c[i];
+			if(c[i] != ' ')
+				cstring[i] = c[i];
+			else
+				cstring[i] =',';
 		}
-		String cstring2 = cstring.replaceAll(" ", ",");
-		c = cstring2.toCharArray();
+		for(int i=0; i< c.length; i++) {
+			c[i] = cstring[i];
+		}
+		//String cstring2 = cstring.replaceAll(" ", ",");
+		//c = cstring.toCharArray();
 	}
 	
 	public static void printCharArray(char c[]) {
